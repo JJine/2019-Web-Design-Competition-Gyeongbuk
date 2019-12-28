@@ -1,0 +1,122 @@
+@charset "UTF-8";
+
+* {
+    margin : 0;
+    padding : 0;
+}
+
+html, body { 
+    height : 100%;
+    width : 100%;
+}
+
+ol, ul {
+    list-style : none;
+}
+
+#wrap {
+    margin : 0 auto;
+    height : 100%;
+    width : 85%; 
+}
+
+.left {
+    position : absolute;
+    float : left;
+    width : 5%;
+    height : 50%;
+    margin : 50px 0 0 100px;
+    z-index : 3;
+}
+
+.left > button {
+    color : #fff;
+    background-color: #868e96;
+    margin-bottom : 10px;
+    width : 100px;
+    height : 35px;
+    border-radius: 30px;
+    border-color : #868e96;
+    font-size : 100%;
+}
+
+.center {
+    padding-left : 300px;
+    
+}
+
+.gray {
+    position : relative;
+    margin-top : 30px;
+    height : 494px;
+    width : 880px;
+    background-color: #868e96;
+}
+
+canvas {
+    position : absolute;
+    z-index : 10;
+    top : 0%;
+}
+
+video {
+    position : absolute;
+    padding-left : 300px;
+    width : 100%;
+    height : 100%;
+    right : 0%;
+    top : 0%;
+    /* display : none; */
+    z-index : 2
+}
+
+h1 {
+    padding-top : 220px;
+    padding-left : 280px;
+    color : white;
+}
+
+.right{
+    float : left;
+    margin : 50px 30px  100px;
+    width : 5%;
+    margin-right : 170px;
+    /* padding-right : 170px; */
+    /* height : 50%; */
+}
+
+/* .right select {
+    float : left;
+    margin-left : 700px;
+}
+
+.right p {
+    float : left;
+    margin-left : 700px;
+    
+}  */
+
+.img {
+    float : left;
+    margin-left : 470px;
+    width : 100%;
+    height : 40%;
+}
+
+.img img {
+    width : 6%;
+    margin-left : 10px;
+    cursor : pointer;
+}
+
+.time div, .time p{
+    float: left;
+}
+
+.time p{
+    margin: 0 5px 0 5px;
+}
+
+#start_time {
+    margin-left : 100px;
+}
