@@ -27,7 +27,7 @@ class App {
     set active(tool) {
         this.activeTool = tool;
         if(document.querySelector(".tool.active")) document.querySelector(".tool.active").classList.remove("active");
-        d
+        document.querySelector(`.tool[data-name='${tool}']`).classList.add("active");
     }
 
     addEvent() {
@@ -35,7 +35,7 @@ class App {
         // document.querySelector("#rectangle").addEventListener("click", e => this.view.playTrack === null ? alert ("비디오를 선택해주세요") : this.changestaus(e.taget, app.PAHT));
         // document.querySelector("#text").addEventListener("click", e => this.view.playTrack === null ? ));
 
-        document.querySelectorAll(".left").forEach(x => {
+        document.querySelectorAll(".tool").forEach(x => {
             x.addEventListener("click", e => {
                 this.active = e.target.dataset.name;
             });
@@ -52,18 +52,33 @@ class App {
         });
 
         window.addEventListener("mousemove", e => {
-            if(this.temp_clip === null && this.temp_clip.mousemove) {
-                this.temp_clip.mousedown(e);
+            if(this.temp_clip !== null && this.temp_clip.mousemove) {
+                this.temp_clip.mousemove(e);
+            }
+        });
+
+        window.addEventListener("mouseup", e => {
+            if(this.temp_clip !== null && this.temp_clip.mouseup) {
+                this.temp_clip.mouseup(e);
             }
         });
         
+    }
+
+    unset() {
+        this.temp_clip = null;
     }
 
     download() {
         
     }
 }
-window.addEventListener("load", ()=>{  
-    let app = new App();
-});
+// window.addEventListener("load", ()=>{  
+//     let app = new App();
+// });
+
+window.onload = () => {
+    const app = new App();
+    app.addEvent();
+}
 

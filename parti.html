@@ -144,15 +144,15 @@
         </div>
          <!--left-->
            <div class="left">
-            <button id="free_curve" >자유곡선</button>
-            <button id="rectangle" onclick="rect_click()">사각형</button>
-            <button id="text" onclick="txt_click()">텍스트</button>
-            <button id="choice" onclick="sec_click()">선택</button>
-            <button id="play" onclick="vid_player()">재생</button>
-            <button id="stop" onclick="vid_pause()">정지</button>
-            <button id="delete_all">전부삭제</button>
-            <button id="deletion" onclick="sec_del_click()">선택삭제</button>
-            <button id="download" onclick="download_click()">다운로드</button>
+            <button class="tool active" data-name="line" >자유곡선</button>
+            <button class="tool" data-name="rect">사각형</button>
+            <button class="tool" data-name="text">텍스트</button>
+            <button class="sec" onclick="sec_click()">선택</button>
+            <button class="play" onclick="vid_player()">재생</button>
+            <button class="stop" onclick="vid_pause()">정지</button>
+            <button class="delete_all">전부삭제</button>
+            <button class="section" onclick="sec_del_click()">선택삭제</button>
+            <button class="load" onclick="download_click()">다운로드</button>
     </div>
     <!-- </div> -->
 
@@ -189,8 +189,11 @@
     <!--//footer-->
     <script src="./B Module/js/App.js"></script>
     <script src="./B Module/js/Clip.js"></script>
+    <script src="./B Module/js/Line.js"></script>
+    <script src="./B Module/js/Rect.js"></script>
+    <script src="./B Module/js/Text.js"></script>
     <script src="./B Module/js/TimeTrack.js"></script>
-    <script src="./B Module/js/View.js"></script>
-    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="./B Module/js/Viewport.js"></script>
+    <script src="./B Module/js/jquery-3.3.1.min.js"></script>
 </body>
 </html>
