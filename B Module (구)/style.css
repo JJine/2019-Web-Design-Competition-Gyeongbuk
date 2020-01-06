@@ -46,7 +46,7 @@ ol, ul {
 }
 
 .gray {
-    position : relative;
+    /* position : relative; */
     margin-top : 30px;
     height : 494px;
     width : 880px;
@@ -54,11 +54,11 @@ ol, ul {
 }
 
 canvas {
-    position : absolute;
+    /* position : absolute; */
     z-index : 10;
     top : 0%;
 }
-
+/* 
 video {
     position : absolute;
     padding-left : 300px;
@@ -66,9 +66,8 @@ video {
     height : 100%;
     right : 0%;
     top : 0%;
-    /* display : none; */
     z-index : 2
-}
+} */
 
 h1 {
     padding-top : 220px;

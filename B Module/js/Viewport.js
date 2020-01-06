@@ -4,10 +4,10 @@ class Viewport {
         this.width = 760;
         this.height = 430;
         this.clipList = [];
-        this.root = document.querySelector("#myCanvas");
-        this.ctx = this.root.getContext("2d");
-        this.addEvent();
-
+        this.canvas = document.querySelector("#myCanvas");
+        this.ctx = this.canvas.getContext("2d");
+        this.video = document.querySelector("video");
+        // this.videoTime = document.querySelector("#")
         requestAnimationFrame(() => {
             this.render();
         });
@@ -23,7 +23,16 @@ class Viewport {
             this.render();
         })
     }
-    addEvent() {
 
+    play() {
+        if(!this.video.paused) {
+            this.video.play();
+        }
     }
+
+    stop() { 
+        this.video.pause();
+    }
+
+   
 }

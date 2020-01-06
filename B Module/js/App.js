@@ -5,11 +5,16 @@ Number.prototype.timeFormat = function() {
     m = m.substring(m.length - 2, m.length);
     let s = "0" + Math.floor(this % 60);
     s = s.substring(s.length - 2, s.length);
-    return `${h}:${m}:${s}`;
+    let msec = (this - int).toFixed(2).substr(2);
+    return `${h}:${m}:${s}:${msec}`;
 }
 
 
 class App {
+    static PATH = 0;
+    static RECT = 1;
+    static TEXT = 2;
+    static SELECT = 3;
     constructor() {
         this.activeTool = "line";
         this.temp_clip = null;
@@ -19,7 +24,9 @@ class App {
         this.line = () => new Line(this);
         this.rect = () => new Rect(this);
         this.text = () => new Text(this);
-
+        this.status = null;
+        this.contents = document.querySelector("#contents");
+        this.track = document.querySelector("#track");
         this.addEvent();
         this.download();
     }
@@ -31,9 +38,6 @@ class App {
     }
 
     addEvent() {
-        // document.querySelector("#free_curve").addEventListener("click", e => this.view.playTrack === null ? alert("비디오를 선택해주세요") : this.changestaus(e.taget, app.PAHT));
-        // document.querySelector("#rectangle").addEventListener("click", e => this.view.playTrack === null ? alert ("비디오를 선택해주세요") : this.changestaus(e.taget, app.PAHT));
-        // document.querySelector("#text").addEventListener("click", e => this.view.playTrack === null ? ));
 
         document.querySelectorAll(".tool").forEach(x => {
             x.addEventListener("click", e => {

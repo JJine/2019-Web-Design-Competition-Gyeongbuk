@@ -9,11 +9,14 @@ class Clip {
     }
 
     getXY(e){
+        this.gray = document.querySelector(".gray");
+        this.body = document.querySelector('body');
         const {clientX, clientY} = e;
-        let x = clientX - this.canvas.offsetLeft;
+        let x = clientX - this.gray.offsetLeft;
         x = x < 0 ? 0 : this.canvas.width < x ? this.canvas.width : x;
-        let y = clientY - this.canvas.offsetTop;
+        let y = e.offsetY;
         y = y < 0 ? 0 : this.canvas.left < y ? this.canvas.left : y;
+        console.log(x,y);
         return {x: x, y: y};
     }
 }

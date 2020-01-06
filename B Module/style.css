@@ -68,6 +68,7 @@ h1 {
     align-items: center;
     color : #fff;
     margin-top: 180px;
+    /* visibility: visible; */
 }
 
 canvas {

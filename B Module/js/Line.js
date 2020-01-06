@@ -9,6 +9,10 @@ class Line extends Clip {
         this.history = [];
     }
 
+    mousedown(e) {
+        document.querySelector('h1').style.display = 'hidden';
+    }
+
     mousemove(e) {
         if(e.which !== 1) return;
         const { x, y } = this.getXY(e);
