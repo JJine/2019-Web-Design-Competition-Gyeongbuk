@@ -4,8 +4,8 @@ class Clip {
         this.viewport = app.viewport;
         this.color = document.querySelector("#line_color").value;
         this.thick = document.querySelector("#line_width").value;
-        this.canvas = this.viewport.root;
-        this.ctx = this.viewport.ctx;
+        // this.canvas = this.viewport.root;
+        // this.ctx = this.viewport.ctx;
     }
 
     getXY(e){

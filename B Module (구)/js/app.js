@@ -131,7 +131,7 @@ function button1_click() {
         var startX, starY, height, width;
         canvas.onmousedown = function (e) {
             e.preventDefault();
-            ctx.begintPath();
+            ctx.beginPath();
     
             ctx.fill();
         }

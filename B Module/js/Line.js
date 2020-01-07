@@ -4,16 +4,12 @@ const Y = 1;
 class Line extends Clip {
     constructor(app) {
         super(app);
-
         this.select = false;
         this.history = [];
     }
 
-    mousedown(e) {
-        document.querySelector('h1').style.display = 'hidden';
-    }
-
     mousemove(e) {
+        console.log(e);
         if(e.which !== 1) return;
         const { x, y } = this.getXY(e);
         this.history.push([x, y]);
@@ -28,7 +24,7 @@ class Line extends Clip {
         if(this.select) {
             this.ctx.strokeStyle = this.color;
             this.ctx.lineWidth = this.thick;
-
+            console.log(this.history[0][X],this.history[0][Y]);
             this.ctx.beginPath();
             this.ctx.moveTo(this.history[0][X], this.history[0][Y]);
             this.history.forEach(x => {
@@ -49,6 +45,4 @@ class Line extends Clip {
             this.ctx.stroke();
         }
     }
-
-
 }

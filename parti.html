@@ -83,8 +83,11 @@
     <!-- <div id="wrap"> -->
      
         <div class="center">
+            
             <div class="gray"> 
+                
                 <h1>동영상을 선택해주세요.</h1>
+                <video></video>
                 <canvas id="myCanvas" width="760" height="430"></canvas>
             </div>
         </div>
@@ -136,23 +139,23 @@
           
         <!--img-->
         <div class="img">
-            <img src="./imges/movie1-cover.jpg" alt="movie1">
-            <img src="./imges/movie2-cover.jpg" alt="movie2">
-            <img src="./imges/movie3-cover.jpg" alt="movie3">
-            <img src="./imges/movie4-cover.jpg" alt="movie4">
-            <img src="./imges/movie5-cover.jpg" alt="movie5">
+            <img id="movie-img1" src="./imges/movie1-cover.jpg" alt="movie1" data-video="movie1.mp4">
+            <img id="movie-img2" src="./imges/movie2-cover.jpg" alt="movie2" data-video="movie2.mp4">
+            <img id="movie-img3" src="./imges/movie3-cover.jpg" alt="movie3" data-video="movie3.mp4">
+            <img id="movie-img4" src="./imges/movie4-cover.jpg" alt="movie4" data-video="movie4.mp4">
+            <img id="movie-img5" src="./imges/movie5-cover.jpg" alt="movie5" data-video="movie5.mp4">
         </div>
          <!--left-->
            <div class="left">
-            <button class="tool active" data-name="line" >자유곡선</button>
-            <button class="tool" data-name="rect">사각형</button>
-            <button class="tool" data-name="text">텍스트</button>
-            <button class="sec" onclick="sec_click()">선택</button>
-            <button class="play_btn" onclick="vid_player()">재생</button>
-            <button class="stop_btn" onclick="vid_pause()">정지</button>
-            <button class="delete_all">전부삭제</button>
-            <button class="section" onclick="sec_del_click()">선택삭제</button>
-            <button class="load" onclick="download_click()">다운로드</button>
+            <button class="tool active" id = "path-btn" data-name="line" >자유곡선</button>
+            <button class="tool" id="rect-btn" data-name="rect">사각형</button>
+            <button class="tool" id="text-btn" data-name="text">텍스트</button>
+            <button class="section-btn" id="select-btn">선택</button>
+            <button id="play-btn">재생</button>
+            <button id="stop-btn">정지</button>
+            <button id="allDel-btn">전부삭제</button>
+            <button id="secDel-btn">선택삭제</button>
+            <button id="down-btn">다운로드</button>
     </div>
     <!-- </div> -->
 
@@ -192,7 +195,7 @@
     <script src="./B Module/js/Line.js"></script>
     <script src="./B Module/js/Rect.js"></script>
     <script src="./B Module/js/Text.js"></script>
-    <script src="./B Module/js/TimeTrack.js"></script>
+    <script src="./B Module/js/Player.js"></script>
     <script src="./B Module/js/Viewport.js"></script>
     <script src="./B Module/js/jquery-3.3.1.min.js"></script>
 </body>

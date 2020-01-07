@@ -119,3 +119,8 @@ h1 {
 #start_time {
     margin-left : 100px;
 }
+
+video {
+    width : 760px;
+    height : 430px;
+}
