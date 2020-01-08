@@ -1,15 +1,30 @@
 const X = 0;
 const Y = 1;
 
-class Line extends Clip {
+class Line extends Tool {
     constructor(app) {
         super(app);
         this.select = false;
         this.history = [];
+        // this.statX = this.canvasX(e.clientX);
+        // this.statY = this.canvasY(e.clientY);
+        
+    }
+
+    mousemove() {
+        e.preventDefault();
+
+        this.ctx.moveTo(startX, startY);
+        this.startX = e.offsetX;
+        this.startY = e.offsetY;
+
+        this.ctx.fill();
+        console.log("x좌표 = " + startX);
+        console.log("y좌표 = " + startY);
     }
 
     mousemove(e) {
-        console.log(e);
+        // console.log(e);
         if(e.which !== 1) return;
         const { x, y } = this.getXY(e);
         this.history.push([x, y]);
@@ -20,6 +35,7 @@ class Line extends Clip {
         this.app.unset();
     }
 
+    
     redraw() {
         if(this.select) {
             this.ctx.strokeStyle = this.color;

@@ -1,4 +1,4 @@
-class Text extends Clip {
+class Text extends Tool {
     constructor(app) {
         super(app);
 
