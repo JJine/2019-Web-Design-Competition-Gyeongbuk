@@ -14,6 +14,10 @@ Number.prototype.parseTime = function(){
 }
 
 
+const borderWidth = 8;
+const borderColor = '#50BCDF';
+const topCanvas = document.querySelector('#myCanvas'); //상위
+const topTrack = document.querySelector('#track'); //상위
 class App {
     static PATH = 0;
     static RECT = 1;
@@ -21,40 +25,31 @@ class App {
     static SELECT = 3;
 
     constructor() {
-        this.activeTool = "line";
-        this.temp_clip = 1;
         this.tool = new Tool(this);
-        this.viewport = new Viewport(this);
+        this.toolNum = 0;
+        this.canvasNum = 0;
+        this.rectNum = 0;
+        this.textNum = 0;
+        this.trackNum = 0;
 
-        // this.line = () => new Line(this);
-        // this.rect = () => new Rect(this);
-        // this.text = () => new Text(this);
-        // this.status = null;
-        // this.contents = document.querySelector("#contents");
-        // this.track = document.querySelector("#track");
-        // this.addEvent();
+        this.toolList = [];
+
+        this.track = null;
+        this.selectTool = null;
+
         this.download();
     }
 
-    set active(tool) {
-        this.activeTool = tool;
-        if(document.querySelector(".tool.active")) document.querySelector(".tool.active").classList.remove("active");
-        document.querySelector(`.tool[data-name='${tool}']`).classList.add("active");
-    }
-
-    addCanvas() {
-        this.canvas = document.createElement("canvas");
-        this.canvas.width = 760;
-        this.canvas.height = 430;
-        this.canvas.id = `tool_${this.toolNumber+=1}`;
-        this.canvas.classList.add(`canvas_${this.canvasNumber++}`);
-    }
+    // set active(tool) {
+    //     this.activeTool = tool;
+    //     if(document.querySelector(".tool.active")) document.querySelector(".tool.active").classList.remove("active");
+    //     document.querySelector(`.tool[data-name='${tool}']`).classList.add("active");
+    // }
 
     addEvent() {
         //document.querySelector("#path-btn").addEventListener("click", e => this.viewport.playTrack !== null ? alert("비디오를 선택해 주세요!") : this.changeStatus(e.target, App.PATH));
-        //내꺼
+        //지수 0.< 
         document.querySelector("#path-btn").addEventListener("click", (e)=> {
-            // console.log(e);
             if(document.querySelector("video").getAttribute("src") == null) {alert("비디오를 선택해주세요!"); return false;} this.changeStatus(e.target,App.PATH);
         });
         

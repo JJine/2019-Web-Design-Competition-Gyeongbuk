@@ -88,7 +88,8 @@
                 
                 <h1>동영상을 선택해주세요.</h1>
                 
-                <canvas id="myCanvas" width="760" height="430"></canvas><video></video>
+                <canvas id="myCanvas" width="760" height="430"></canvas>
+                <video></video>
             </div>
         </div>
        
@@ -136,6 +137,11 @@
                 <p>00 : 00 : 00 : 00</p>
             </div>
         </div>
+        <div id="track">
+            <div id="t_view">
+                <div class="time_track"></div>
+            </div>
+        </div>
           
         <!--img-->
         <div class="img">
@@ -147,10 +153,10 @@
         </div>
          <!--left-->
            <div class="left">
-            <button class="tool active" id = "path-btn" data-name="line" >자유곡선</button>
-            <button class="tool" id="rect-btn" data-name="rect">사각형</button>
-            <button class="tool" id="text-btn" data-name="text">텍스트</button>
-            <button class="section-btn" id="select-btn">선택</button>
+            <button class="tool active" id = "path-btn" data-tool="line" >자유곡선</button>
+            <button class="tool" id="rect-btn" data-tool="rect">사각형</button>
+            <button class="tool" id="text-btn" data-tool="text">텍스트</button>
+            <button class="section-btn" id="select-btn" data-tool="select">선택</button>
             <button id="play-btn">재생</button>
             <button id="stop-btn">정지</button>
             <button id="allDel-btn">전부삭제</button>

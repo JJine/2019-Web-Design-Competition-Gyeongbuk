@@ -1,16 +1,15 @@
 class Viewport {
     constructor(app) {
-        this.newCanvas = document.createElement("canvas");
+        // this.newCanvas = document.createElement("canvas");
         this.app = app;
         this.width = 760;
         this.height = 430;
         this.clipList = [];
-        this.root = document.querySelector("#myCanvas");
-        this.ctx = this.root.getContext("2d");
+        this.canvas = document.querySelector("#myCanvas");
+        this.ctx = this.canvas.getContext("2d");
         this.video = document.querySelector("video");
         this.cTime = document.querySelector(".n_time");
         this.dTime = document.querySelector(".n_time2");
-        // this.videoTime = document.querySelector("#")
         this.addEvent();
 
         requestAnimationFrame(() => {
@@ -19,7 +18,6 @@ class Viewport {
     }
 
     addEvent() {
-        
         // DOM :: document object model
         document.querySelectorAll(".img img").forEach((img, i) => {
             img.addEventListener("click", (e) => {
@@ -29,18 +27,20 @@ class Viewport {
                 // this.playVideo();
             });
         });
+
+        
     }
 
-
     render() {
-        this.ctx.clearRect(0, 0, this.width, this.height);
-        this.clipList.forEach(x => {
-            x.redraw();
-        });
+        // this.ctx.clearRect(0, 0, this.width, this.height);
+        // this.toolList.forEach(x => {
+        //     x.redraw();
+        // });
 
         requestAnimationFrame(() => {
             this.render();
         });
+
         this.cTime.innerHTML = this.video.currentTime.parseTime();
         this.dTime.innerHTML = this.video.duration.parseTime();
         // this.dTime.innerHtml = d.timeFormat(340);

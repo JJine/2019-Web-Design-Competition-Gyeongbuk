@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 21.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 200 200" style="enable-background:new 0 0 200 200;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;}
+	.st1{fill:url(#SVGID_1_);stroke:#FFFFFF;stroke-width:4;stroke-miterlimit:10;}
+	.st2{fill:url(#SVGID_2_);stroke:#FFFFFF;stroke-width:4;stroke-miterlimit:10;}
+	.st3{font-family:'KBIZgo_B';}
+	.st4{font-size:16.9779px;}
+	.st5{font-size:5.7033px;}
+</style>
+<g>
+	<g>
+		<path class="st0" d="M113,101.8c1.9,0,1.9-3,0-3C111.1,98.8,111.1,101.8,113,101.8L113,101.8z"/>
+	</g>
+</g>
+<g>
+	<g>
+		<path class="st0" d="M157.4,116.3c1.9,0,1.9-3,0-3C155.5,113.3,155.5,116.3,157.4,116.3L157.4,116.3z"/>
+	</g>
+</g>
+<g>
+	<g>
+		<path class="st0" d="M159,104.3c1.9,0,1.9-3,0-3C157.1,101.3,157.1,104.3,159,104.3L159,104.3z"/>
+	</g>
+</g>
+<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="35.1746" y1="88.1326" x2="80.3521" y2="88.1326">
+	<stop  offset="1.507538e-02" style="stop-color:#FFCDC1"/>
+	<stop  offset="1" style="stop-color:#ED1C24"/>
+	<stop  offset="1" style="stop-color:#000000"/>
+</linearGradient>
+<ellipse class="st1" cx="57.8" cy="88.1" rx="22.6" ry="23.1"/>
+<ellipse class="st0" cx="66.7" cy="80.1" rx="5.3" ry="5.4"/>
+<ellipse class="st0" cx="48.3" cy="80.1" rx="5.3" ry="5.4"/>
+<ellipse class="st0" cx="66.7" cy="97.3" rx="5.3" ry="5.4"/>
+<ellipse class="st0" cx="48.3" cy="97.3" rx="5.3" ry="5.4"/>
+<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="19" y1="114.9778" x2="57.4845" y2="114.9778">
+	<stop  offset="0" style="stop-color:#469AFF"/>
+	<stop  offset="1" style="stop-color:#91FAFF"/>
+	<stop  offset="1" style="stop-color:#FFFFFF"/>
+</linearGradient>
+<ellipse class="st2" cx="38.2" cy="115" rx="19.2" ry="19.7"/>
+<path class="st0" d="M51.3,109.6c-0.5,2.3-2.7,3.8-5,3.3c-2.3-0.5-3.7-2.8-3.2-5.1c0.5-2.3,2.7-3.8,5-3.3
+	C50.3,105,51.7,107.3,51.3,109.6z"/>
+<ellipse class="st0" cx="31" cy="108.7" rx="4.2" ry="4.3"/>
+<ellipse class="st0" cx="31" cy="121.8" rx="4.2" ry="4.3"/>
+<ellipse class="st0" cx="47.2" cy="121.8" rx="4.2" ry="4.3"/>
+<ellipse class="st0" cx="57.2" cy="89.8" rx="2" ry="2"/>
+<ellipse class="st0" cx="38.2" cy="116.1" rx="1.4" ry="1.4"/>
+<text transform="matrix(1 0 0 1 65.499 121.8994)" class="st0 st3 st4">부산국제영화제</text>
+<text transform="matrix(1 0 0 1 68.501 131.7358)" class="st0 st3 st5">BUSAN INTERNATION FILM FESTIVAL</text>
+</svg>
