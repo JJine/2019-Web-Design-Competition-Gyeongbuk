@@ -26,6 +26,8 @@ class App {
 
     constructor() {
         this.tool = new Tool(this);
+        this.viewport = new Viewport;
+
         this.toolNum = 0;
         this.canvasNum = 0;
         this.rectNum = 0;
@@ -78,12 +80,12 @@ class App {
         });
 
 
-        document.querySelectorAll(".tool").forEach(x => {
-            x.addEventListener("click", e => {
-                this.active = e.target.dataset.name;
-                console.log(e);
-            });
-        }); 
+        // document.querySelectorAll(".tool").forEach(x => {
+        //     x.addEventListener("click", e => {
+        //         this.active = e.target.dataset.name;
+        //         console.log(e);
+        //     });
+        // }); 
     }
 
     changeStatus(target, status){

@@ -1,7 +1,7 @@
-class Rect extends Tool {
-    constructor(app){
-        super(app);
-
+class Rect{
+    constructor(app, tool){
+        this.app = app;
+        this.tool = tool;
         this.cx = null;
         this.cy = null;
 

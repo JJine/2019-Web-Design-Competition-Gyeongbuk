@@ -1,6 +1,7 @@
-class Text extends Tool {
-    constructor(app) {
-        super(app);
+class Text{
+    constructor(app, tool) {
+        this.app = app;
+        this.tool = tool;
 
         this.input = document.createElement("input");
         this.input.autofocus = true;
