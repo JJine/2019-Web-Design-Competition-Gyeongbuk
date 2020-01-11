@@ -42,6 +42,11 @@ header {
     position : relative;
 }
 
+.logo {
+    margin-bottom : 40px;
+    margin-right : 100px;
+}
+
 header .etc {
     height : 40px;
     background : #000;

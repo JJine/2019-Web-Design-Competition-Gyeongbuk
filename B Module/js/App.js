@@ -16,7 +16,7 @@ Number.prototype.parseTime = function(){
 
 const borderWidth = 8;
 const borderColor = '#50BCDF';
-const topCanvas = document.querySelector('#myCanvas'); //상위
+const topCanvas = document.querySelector('#canvas'); //상위
 const topTrack = document.querySelector('#track'); //상위
 class App {
     static PATH = 0;
@@ -27,12 +27,6 @@ class App {
     constructor() {
         this.tool = new Tool(this);
         this.viewport = new Viewport;
-
-        this.toolNum = 0;
-        this.canvasNum = 0;
-        this.rectNum = 0;
-        this.textNum = 0;
-        this.trackNum = 0;
 
         this.toolList = [];
 
@@ -103,9 +97,7 @@ class App {
 
     download() {
         
-    }
-
-    
+    }    
 }
 // window.addEventListener("load", ()=>{  
 //     let app = new App();
