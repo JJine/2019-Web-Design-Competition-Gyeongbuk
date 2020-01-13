@@ -9,7 +9,7 @@ class Tool {
         this.rectNumber = 0;
         this.textNumber = 0;
         this.selectNumber = 0;
-        this.classList = [];
+        // this.classList = [] ;
 
         this.line = new Line(this.app, this);
         this.rect = new Rect(this.app, this);
@@ -19,7 +19,8 @@ class Tool {
         this.color = document.querySelector("#line_color").value;
         this.fontsize = document.querySelector("#font_size").value;
         this.strokeSize = document.querySelector("#line_width").value;
-        this.gray = document.querySelector(".gray");
+        this.gray = document.querySelector("#gray");
+        this.topCanvas = document.querySelector('#canvas'); //상위
         this.mouseEvent();
     }
 
@@ -34,25 +35,30 @@ class Tool {
 
         window.addEventListener("mousedown", e=> {
             if(!this.nowTool||e.which !== 1) return;
-            e.path.forEach(el=> {
-                if(el.classList[0] === 'gray')
+            e.path.forEach(el=> { 
+                console.log(el);
+                if(el.id === 'gray') {
                     this.setTool.mousedown(e);
+                }
             })
         });
 
         window.addEventListener("mousemove", e=> {
             if(!this.nowTool||e.which!== 1) return;
             e.path.forEach(el=> {
-                if(el.classList[0] === 'gray')
-                    this.setTool.mousemove(e);
+                if(el.id === 'gray') {
+                     this.setTool.mousemove(e);
+                }
+                    
             })
         })
 
         window.addEventListener("mouseup", e=> {
             if(!this.nowTool||e.which!== 1) return;
             e.path.forEach(el=> {
-                if(el.classList[0] === 'gray')
+                if(el.id === 'gray') {
                     this.setTool.mouseup(e);
+                }
             })
         })
 
@@ -60,26 +66,34 @@ class Tool {
   
     addCanvas() {
         let canvas = document.createElement("canvas");
-        canvas.id = `tool_${this.toolNumber+=1}`; //툴 영역을 사용할 것이니
+        canvas.id = `tool_${this.toolNumber}`; //툴 영역을 사용할 것이니
         canvas.classList.add('canvas');
         canvas.classList.add(`${this.canvasNumber}`);
         canvas.classList.add(`canvas_${this.canvasNumber++}`); //"canvas_${canvasNumber}"클래스를 요소에 추가 
-        let style = canvas.style;
-        style.width = 760 + 'px';
-        style.height = 430 + 'px';
-        style.zIndex = this.toolNumber;
         this.gray.appendChild(canvas); // this..appendChild(canvas);
+        // let style = document.querySelector("#tool_0");
+        // console.log(`tool_${this.toolNumber}`);
+        this.toolNumber++;
+        canvas.width = 760;
+        canvas.height = 430;
+        canvas.style.zIndex = this.toolNumber;
     }
 
     mousePoint(e){ 
-        console.log(e);
-        const {clientX, clientY} = e;
-        let x = clientX - this.gray.offsetLeft;
-        x = x < 0 ? 0 : this.app.topCanvas.width < x ? this.app.topCanvas.width : x;
-        console.log(this.topCanvas);
-        let y = clientY - this.gray.offsetTop;
-        y = y < 0 ? 0 : this.app.topCanvas.left < y ? this.app.topCanvas.left : y;
+        let offsetTop = $(this.gray).offset().top;
+        let offsetLeft = $(this.gray).offset().left;
+        const {pageX, pageY} = e;
+        console.log(offsetTop,offsetLeft);
+        let x = pageX - offsetLeft;
+        console.log(this.gray.offsetWidth);
+        x = x < 0 ? 0 : this.gray.offsetWidth < x ? this.gray.offsetWidth : x;
+        let y = pageY - offsetTop;
+        y = y < 0 ? 0 : this.gray.offsetHeight  < y ? this.offsetHeight : y;
+        // console.log(y);
+        console.log(x,y);
         return {x: x, y: y};
       }
+      
+
 
 }

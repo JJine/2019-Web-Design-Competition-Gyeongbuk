@@ -7,17 +7,17 @@ class Line{
     mousedown(e) {
         console.log(e);
         this.tool.path = [];
-        this.tool.addCanvas(e);
-        this.tool.canvas = document.querySelector(`#tool_${this.tool.toolNumber}`);
+        this.tool.addCanvas(e); console.log(this.tool.toolNumber-1);
+        this.tool.canvas = document.querySelector(`#tool_${this.tool.toolNumber-1}`);
         this.tool.ctx = this.tool.canvas.getContext("2d");
-
+       
         this.savePoint(e);
         this.draw();
  
     }
 
     mousemove(e) {
-        this.savaPoint(e);
+        this.savePoint(e);
         this.draw();
         console.log(e);
     }
@@ -33,7 +33,7 @@ class Line{
 
         if(this.tool.path.length > 0){
             for(let i = 0; i < this.tool.path.length; i++){
-                this.tool.ctx.strokeStyle = this.tool.path[i].color;
+                this.tool.ctx.color = this.tool.path[i].color;
                 this.tool.ctx.lineWidth = this.tool.path[i].w;
                 if(i != 0)
                     this.tool.ctx.moveTo(this.tool.path[i-1].x, this.tool.path[i-1].y);

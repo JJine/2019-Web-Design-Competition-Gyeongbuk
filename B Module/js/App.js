@@ -16,7 +16,6 @@ Number.prototype.parseTime = function(){
 
 const borderWidth = 8;
 const borderColor = '#50BCDF';
-const topCanvas = document.querySelector('#canvas'); //상위
 const topTrack = document.querySelector('#track'); //상위
 class App {
     static PATH = 0;
