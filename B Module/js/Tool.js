@@ -16,13 +16,17 @@ class Tool {
         this.text = new Text(this.app, this);
         
         this.toolDom = document.querySelectorAll("button"); 
-        this.color = document.querySelector("#line_color").value;
-        this.fontsize = document.querySelector("#font_size").value;
-        this.strokeSize = document.querySelector("#line_width").value;
+        // this.color = document.querySelector("#line_color").value;
+        // this.fontsize = document.querySelector("#font_size").value;
+        // this.strokeSize = document.querySelector("#line_width").value;
         this.gray = document.querySelector("#gray");
         this.topCanvas = document.querySelector('#canvas'); //상위
         this.mouseEvent();
     }
+
+    get color() { return document.querySelector("#line_color").value; }
+    get fontSize() { return document.querySelector("#font_size").value; }
+    get strokeSize() { return document.querySelector("#line_width").value;}
 
     mouseEvent() {
         this.toolDom.forEach(tool => {
@@ -78,6 +82,30 @@ class Tool {
         canvas.height = 430;
         canvas.style.zIndex = this.toolNumber;
     }
+
+    addRect() {
+        this.rect = document.createElement("div");
+        this.rect.id = `tool_${this.rectNumber += 1}`;
+        console.log(this.rectNumber);
+        Rect.ID = `tool_${this.rectNumber+=1}`;
+        this.rect.classList.add('tool_square');
+        this.rect.classList.add(`square_${this.rectNumber}`);
+        
+        this.style = this.rect.style;
+        this.style.borderColor = this.color;
+        console.log(this.style.borderColor);
+        console.log(this.color);
+        this.style.left = this.sX + 'px';
+        this.style.top = this.sY + 'px';
+        // this.rectNumber++;
+        this.style.zIndex = this.toolNumber;
+
+        this.gray.appendChild(this.rect);
+        this.app.toolList.push(`tool_${this.toolNumber}`);
+
+        return this.style;
+    }
+
 
     mousePoint(e){ 
         let offsetTop = $(this.gray).offset().top;

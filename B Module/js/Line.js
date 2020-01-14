@@ -33,7 +33,7 @@ class Line{
 
         if(this.tool.path.length > 0){
             for(let i = 0; i < this.tool.path.length; i++){
-                this.tool.ctx.color = this.tool.path[i].color;
+                this.tool.ctx.strokeStyle = this.tool.path[i].color;
                 this.tool.ctx.lineWidth = this.tool.path[i].w;
                 if(i != 0)
                     this.tool.ctx.moveTo(this.tool.path[i-1].x, this.tool.path[i-1].y);

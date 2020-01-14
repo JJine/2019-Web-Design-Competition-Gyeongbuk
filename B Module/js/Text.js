@@ -8,7 +8,7 @@ class Text{
 
         let st = this.input.style;
         st.position = "absolute";
-        st.color = this.color;
+        st.color = this.tool.color;
         
         this.data = {
             x : 0,
@@ -29,10 +29,11 @@ class Text{
     }
 
     mousedown(e) {
-        const {x, y} = this.getXY(e);
+        const {x, y} = this.tool.mousePoint(e);
         this.data.x = x;
         this.data.y = y;
 
+        this.tool.addRect();
         this.input.style.left = e.clientX + "px";
         this.input.style.top = e.clientY + "px";
         this.canvas.parentElement.append(this.input);
