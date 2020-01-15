@@ -17,6 +17,7 @@ Number.prototype.parseTime = function(){
 const borderWidth = 8;
 const borderColor = '#50BCDF';
 const topTrack = document.querySelector('#track'); //상위
+const topCanvas = document.querySelector("#canvas");
 class App {
     static PATH = 0;
     static RECT = 1;
@@ -84,15 +85,15 @@ class App {
     changeStatus(target, status){
         this.status = status;
 
-        const exist = document.querySelector(".left .tool.active");
+        const exist = document.querySelector(".left .tool .active");
         if(exist) exist.classList.remove("active");
 
         target.classList.add("active");
     }
 
-    unset() {
-        this.temp_clip = null;
-    }
+    // unset() {
+    //     this.temp_clip = null;
+    // }
 
     download() {
         

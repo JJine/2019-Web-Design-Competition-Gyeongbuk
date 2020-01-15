@@ -5,10 +5,9 @@ class Line{
     }
 
     mousedown(e) {
-        console.log(e);
         this.tool.path = [];
-        this.tool.addCanvas(e); console.log(this.tool.toolNumber-1);
-        this.tool.canvas = document.querySelector(`#tool_${this.tool.toolNumber-1}`);
+        this.tool.addCanvas(e); console.log(this.tool.toolNumber);
+        this.tool.canvas = document.querySelector(`#tool_${this.tool.toolNumber}`);
         this.tool.ctx = this.tool.canvas.getContext("2d");
        
         this.savePoint(e);
@@ -19,7 +18,6 @@ class Line{
     mousemove(e) {
         this.savePoint(e);
         this.draw();
-        console.log(e);
     }
 
     mouseup() {
@@ -46,7 +44,6 @@ class Line{
     }
 
     savePoint(e){
-        console.log(e);
         const { x, y } = this.tool.mousePoint(e);
         this.tool.path.push({x: x, y: y, c: this.tool.canvasNumber, w: this.tool.strokeSize, color: this.tool.color});
     }

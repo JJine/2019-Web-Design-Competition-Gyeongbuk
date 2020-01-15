@@ -5,22 +5,23 @@ class Rect{
         this.tool = tool;
         // this.cx = null;
         // this.cy = null;
-        this.data = {
-            x: 0,
-            y: 0,
-            w: 0,
-            h: 0
-        };
+
+        // this.data = {   
+        //     x: 0,
+        //     y: 0,
+        //     w: 0,
+        //     h: 0
+        // };
         this.active = false;
     }
 
     mousedown(e){    
         this.active = true;
-        if(e.which !== 1) return false;  
+        // if(e.which !== 1) return false;  
         const {x, y} = this.tool.mousePoint(e);
         this.sX = x; 
-        this.sY = y; 
-
+        this.sY = y;
+        this.tool.addRect(e);
         // this.rect = document.createElement('div');
         // this.rect.id = `tool_${this.rectNumber += 1}`;
         // console.log(this.rectNumber);
@@ -38,7 +39,8 @@ class Rect{
         // this.tool.gray.appendChild(this.rect);
         // this.app.toolList.push(`tool_${this.toolNumber}`);   
         // this.rectNumber++;
-        this.tool.addRect();
+        // this.tool.div = document.querySelector(`#tool_${this.tool.toolNumber}`);
+        // this.tool.ctx = this.tool.canvas.getContext("2d");
         // console.log(this.tool.addRect());
         // this.data.x = x;
         // this.data.y = y;
@@ -48,18 +50,16 @@ class Rect{
     }
 
     mousemove(e){
-        if(e.which !== 1) return false;
-        // let style = document.querySelector("#" + Rect.ID);
-        // console.log(style);
-        let style = this.tool.rect.style;
-        console.log(this.tool.rect.style);
-        const {x, y} = this.tool.mousePoint(e);
         if(this.active) {
+            let style = this.tool.rect.style;
+            const {x, y} = this.tool.mousePoint(e);
+
             if(x < this.sX && y < this.sY)  {
+                style.left = x + "px"; 
                 style.top = y + "px";
                 style.width = this.sX - x + "px";
                 style.height = this.sY - y + "px";
-                style.left = x + "px"
+               
             }
 
             else if(x > this.sX && y > this.sY){
@@ -69,7 +69,7 @@ class Rect{
                 style.height = y - this.sY + "px";
               }
 
-              else if(x < this.sX && y > this.startY){
+              else if(x < this.sX && y > this.sY){
                 style.left = x + "px";
                 style.top = this.sY + "px";
                 style.width = this.sX - x + "px";
@@ -85,13 +85,12 @@ class Rect{
         }
     }
 
-    mouseup(e){
+    mouseup(){
         // this.active = true;
         if(this.active) {
             let style =this.tool.rect.style;
-            console.log(this.tool.rect.color);
             style.backgroundColor = this.tool.color;
-           
+            this.tool.selectPath.push(this.tool.path);
         }
         this.active = false;
     }
